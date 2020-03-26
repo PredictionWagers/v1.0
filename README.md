@@ -1,8 +1,8 @@
-# Ether Price Wagers
+# Predictor
 
-The <b>Ether Price Wagers</b> dApp lets you propose or accept a wager with user-defined odds, pertaining to the future ETH/USD price.  
-[<b>View the User Interface</b>](https://etherpricewagers.github.io/v1.0/EtherPriceWagers.htm)  
-[<b>View the Source Code</b>](https://github.com/EtherPriceWagers/v1.0)
+The <b>Predictor</b> dApp lets you propose or accept a wager with user-defined odds, pertaining to questions that are posted by the contract owner.
+[<b>View the User Interface</b>](https://predictionwagers.github.io/v1.0/Predictor.htm)  
+[<b>View the Source Code</b>](https://github.com/predictionwagers/v1.0)
 
 The Proposer will post a wager by selecting the following parameters:
 * Total Wager Proposed (ETH)
@@ -34,21 +34,12 @@ To use the User Interface, you must be logged into MetaMask, with either the Mai
 9. The Contract Creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of 1 ETH shall require a gross deposit of 1.015.
 10. A new version of this contract will be released on 2020-01-01, so all Resolution Times for this contract must be before 2019-12-29 00:00 (UTC).
 
-<b><i>Resolution Sources</i></b>:
-The Proposer may choose from the following three resolution sources:  
-[fiatcontract.com](https://fiatcontract.com): Ropsten Testnet; running since 12/29/2017
-[See the contract.](https://ropsten.etherscan.io/address/0x2CDe56E5c8235D6360CCbb0c57Ce248Ca9C80909)  
-[fiatcontract.com](https://fiatcontract.com): Mainnet; running since 9/18/2017
-[See the contract.](https://etherscan.io/address/0x8055d0504666e2B6942BeB8D6014c964658Ca591)  
-[MakerDAO Medianizer](https://developer.makerdao.com/feeds): Mainnet; running since 5/10/2017
-[See the contract.](https://etherscan.io/address/0x729D19f657BD0614b4985Cf1D82531c67569197B)  
-
-<b><i>Verified Contracts for Ether Price Wagers</i></b>:  
+<b><i>Contracts for the Predictor dApp</i></b>:  
 [Mainnet](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
-[Ropsten](https://ropsten.etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
+[Kovan](https://ropsten.etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 
 <b><i>Event Log Explorer</i></b>:  
 [Mainnet](https://www.etherlogs.com/?address=0x739194690d334f13104A78784F7FDAD48B4067c7&network=Main)  
-[Ropsten](https://www.etherlogs.com/?address=0x739194690d334f13104A78784F7FDAD48B4067c7&network=Ropsten)  
+[Kovan](https://www.etherlogs.com/?address=0x739194690d334f13104A78784F7FDAD48B4067c7&network=Ropsten)  
 
-*This design specification and user interface are (c) 2019 by EtherLogs.com. All rights reserved.* EtherLogs.com is not responsible for the Ethereum contract that is accessed. Please see the [Terms of Use](https://etherpricewagers.github.io/v1.0/TermsOfUse.htm) for more information.
+The Predictor dApp and user interface are decentralised, and therefore can be run from any server. This Github user is not responsible for the Predictor dApp or user interface. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
