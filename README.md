@@ -1,6 +1,6 @@
 # Predictor
 
-The <b>Predictor</b> dApp lets you propose or accept a wager with user-defined odds, pertaining to questions that are posted by the contract owner.
+The <b>Predictor</b> dApp lets you propose or accept a wager with user-defined odds, pertaining to questions that are posted by the contract owner. 
 [<b>View the User Interface</b>](https://predictionwagers.github.io/v1.0/Predictor.htm)  
 [<b>View the Source Code</b>](https://github.com/predictionwagers/v1.0)
 
