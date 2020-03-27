@@ -1,6 +1,6 @@
 # Prediction Wagers
 
-The <b>Prediction Wagers</b> dApp and User Interface lets you propose or accept a DAI wager with user-defined odds, pertaining to Questions that are posted by the dApp creator.  
+The <b>Prediction Wagers</b> dApp and User Interface let you propose or accept a DAI wager with user-defined odds, pertaining to Questions that are posted by the dApp creator.  
 [<b>View the User Interface</b>](https://predictionwagers.github.io/v1.0/Predictor.htm)  
 [<b>View the Source Code</b>](https://github.com/predictionwagers/v1.0)
 
