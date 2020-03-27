@@ -7,7 +7,7 @@ The <b>Prediction Wagers</b> dApp and User Interface let you propose or accept a
 The Proposer can post a wager by selecting the following parameters, pertaining to a particular Question:
 * <b>Your Prediction:</b> Yes or No.
 * <b>Your Deposit:</b> The maximum amount that you want to risk.
-* <b>Minimum Wager:</b> You can prevent Acceptors from making tiny wagers that you will have to collect (if you win).
+* <b>Minimum Wager:</b> You can prevent Acceptors from making tiny wagers that you would have to collect (if you win).
 * <b>Profit Percentage Offered:</b> The "odds" you are offering, expressed in "American Odds" and Percentages.
 
 ***For example, here is a wager that someone could post:*** 
