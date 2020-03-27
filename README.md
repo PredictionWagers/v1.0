@@ -39,4 +39,4 @@ For example, if you enter a wager for .03 that pays 50% profit, then you will re
 [Mainnet](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 [Kovan](https://kovan.etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 
-The 'Prediction Wagers' dApp and user interface are publicly accessible. They can be run from any server, so this Github user is not responsible or liable for their usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
+The 'Prediction Wagers' dApp and user interface were created by an anonymous author, and are publicly accessible. They can be run from any server, so this Github user is not responsible or liable for their usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
