@@ -35,8 +35,8 @@ For example, if you enter a wager for .03 that pays 50% profit, then you will re
 11. The dApp creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of 1 DAI shall require a gross deposit of 1.015.
 12. A new version of this contract and User Interface will be released periodically. This help file shall contain links to all previous versions, so if you have a balance that has not yet been resolved, you may access the previous version to do so.
 
-<b><i>Contracts for the 'Prediction Wagers' dApp</i></b>:  
+<b><i>Contracts for the Prediction Wagers dApp</i></b>:  
 [Mainnet](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 [Kovan](https://kovan.etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 
-The 'Prediction Wagers' dApp and user interface were created by an anonymous author, and are publicly accessible. They can be run from any server, so this Github user is not responsible or liable for their usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
+The <b>Prediction Wagers</b> dApp and user interface were created by an anonymous author, and are publicly accessible. They can be run from any server, so this Github user is not responsible or liable for their usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
