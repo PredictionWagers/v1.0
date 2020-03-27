@@ -35,7 +35,7 @@ For example, if you enter a wager for .03 that pays 50% profit, then you will re
 11. The dApp creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of 1 DAI shall require a gross deposit of 1.015.
 12. A new version of this contract and User Interface will be released periodically. This help file shall contain links to all previous versions, so if you have a balance that has not yet been resolved, you may access the previous version to do so.
 
-<b><i>Contracts for the Predictor dApp</i></b>:  
+<b><i>Contracts for the 'Prediction Wagers' dApp</i></b>:  
 [Mainnet](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 [Kovan](https://kovan.etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 
