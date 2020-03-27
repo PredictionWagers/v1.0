@@ -30,9 +30,10 @@ To use the User Interface, you must be logged into MetaMask, with either the <b>
 8. The winner may Resolve the wager at any time after the dApp creator has posted the result of the Question.
 9. When a Wager is Resolved, the contract shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. 
 For example, if the Proposer deposited 1.25 to offer a 125% profit on a 1 DAI wager, and the Acceptor wagered .5 and won, then the Acceptor would receive 1.15 (.5 + .625), and the Proposer would receive .625 (the balance of their 1.25 deposit).
-10. The smallest allowable wager is .01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. For example, if you enter a wager for .003 that pays 50% profit, then you will receive .001 profit (instead of .0015).
+10. The smallest allowable wager is .01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. 
+For example, if you enter a wager for .03 that pays 50% profit, then you will receive .01 profit (instead of .015).
 11. The Contract Creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of 1 DAI shall require a gross deposit of 1.015.
-12. A new version of this contract and User Interface will be released periodically. This help file shall contain links to all previous version, so if you have a balance that has not been resolved, you may access the previous version to do so.
+12. A new version of this contract and User Interface will be released periodically. This help file shall contain links to all previous versions, so if you have a balance that has not yet been resolved, you may access the previous version to do so.
 
 <b><i>Contracts for the Predictor dApp</i></b>:  
 [Mainnet](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
