@@ -37,4 +37,4 @@ To use the User Interface, you must be logged into MetaMask, with either the <b>
 [Mainnet](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 [Kovan](https://kovan.etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
 
-The Predictor dApp and user interface are publicly accessible, and can be run from any server. This Github user is not responsible for the Predictor dApp or user interface. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
+The 'Prediction Wagers' dApp and user interface are publicly accessible. They can be run from any server, so this Github user is not responsible or liable for their usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
