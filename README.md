@@ -28,7 +28,8 @@ To use the User Interface, you must be logged into MetaMask, with either the <b>
 6. The dApp creator will post the result for each Question within 30 minutes of its "Resolution Time".
 7. The result ("YOU WON, or "YOU LOST") will then be shown under "Unresolved Wagers".
 8. The winner may Resolve the wager at any time after the dApp creator has posted the result of the Question.
-9. When a Wager is Resolved, the contract shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. For example, if the Acceptor wagered .5 DAI and won, and the Proposer offered a 125% profit on a 1 DAI wager, then the Acceptor would receive 1.15 (.5 + .625), and the Proposer would receive .625 (the balance of their 1.25 DAI deposit).
+9. When a Wager is Resolved, the contract shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. 
+For example, if the Proposer deposited 1.25 to offer a 125% profit on a 1 DAI wager, and the Acceptor wagered .5 and won, then the Acceptor would receive 1.15 (.5 + .625), and the Proposer would receive .625 (the balance of their 1.25 deposit).
 10. The smallest allowable wager is .01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. For example, if you enter a wager for .003 that pays 50% profit, then you will receive .001 profit (instead of .0015).
 11. The Contract Creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of 1 DAI shall require a gross deposit of 1.015.
 12. A new version of this contract and User Interface will be released periodically. This help file shall contain links to all previous version, so if you have a balance that has not been resolved, you may access the previous version to do so.
