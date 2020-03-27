@@ -1,6 +1,6 @@
 # Prediction Wagers
 
-The <b>Prediction Wagers</b> dApp lets you propose or accept a DAI wager with user-defined odds, pertaining to Questions that are posted by the contract owner.  
+The <b>Prediction Wagers</b> dApp and User Interface les you propose or accept a DAI wager with user-defined odds, pertaining to Questions that are posted by the dApp creator.  
 [<b>View the User Interface</b>](https://predictionwagers.github.io/v1.0/Predictor.htm)  
 [<b>View the Source Code</b>](https://github.com/predictionwagers/v1.0)
 
@@ -25,7 +25,7 @@ To use the User Interface, you must be logged into MetaMask, with either the <b>
 3. The Proposer may withdraw their deposit at any time before it is accepted.
 4. If a Proposer wants to bet against their own Wager Proposal, the Proposer must use a different DAI account.
 5. The Acceptor must unlock and deposit DAI, to accept at least the Minimum Proposed Wager.
-6. The contract owner will post the result of the Question within 30 minutes of the "Resolution Time".
+6. The dApp creator will post the result for each Question within 30 minutes of its "Resolution Time".
 7. The result ("YOU WON, or "YOU LOST") will then be shown under "Unresolved Wagers".
 8. The winner may Resolve the wager at any time after the contract owner has posted the result of the Question.
 9. When a Wager is Resolved, the contract shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. For example, if the Acceptor wagered .5 DAI and won, and the Proposer offered a 125% profit on a 1 DAI wager, then the Acceptor would receive 1.15 (.5 + .625), and the Proposer would receive .625 (the balance of their 1.25 DAI deposit).
