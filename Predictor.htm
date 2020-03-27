@@ -15,12 +15,13 @@ input[type=button] {cursor:pointer}
 // DEVTEST: Comment next line
 var gnDoingDev = 0
 
-var gsaQuestions = ["According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 19,000 cents at <font color=lime><b>March 16 2020 4:00pm</b></font>?",
+var gsaQuestions = ["According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 19,000 on <font color=lime><b>March 16 2020 4:00pm</b></font>?",
 "According to the <a target=_ex class=yellowlink href=https://www.predictit.org/markets/detail/3698/Who-will-win-the-2020-US-presidential-election>PredictIt.org</a> market '<b>Who will win the 2020 U.S. presidential election?</b>', will Trump's price be higher than 56 cents at <font color=lime><b>March 16 2020 4:00pm</b></font>?"
 ]
 
 // DEVTEST
-var gnaExpirationDates = [1287744069,1587744069]
+//var gnaExpirationDates = [1287744069,1587744069]
+var gnaExpirationDates = [1587744069,1587744069]
 
 var gobjDAIContract, gobjContract_Predictor_MetaMask, gobjWeb3_metamask
 var gnMetaMaskOK = 0
@@ -50,8 +51,6 @@ if (typeof web3 !== 'undefined') {
 
 async function DoLoad(){
 	da = document.all
-	da.idSpanEventLogLink_Kovan.innerHTML = "<a target=_ex class=bluelink href='https://www.etherlogs.com/?address=" + gcsContract_Predictor_Kovan + "&network=Kovan'>Kovan Test Network</a>"
-	da.idSpanEventLogLink_Mainnet.innerHTML = "<a target=_ex class=bluelink href='https://www.etherlogs.com/?address=" + gcsContract_Predictor_Mainnet + "&network=Main'>Main Ethereum Network</a>"
 
 	if (gnMetaMaskOK) {
 		ethereum.enable()
@@ -75,6 +74,7 @@ async function DoShowDataFromContract() {
 	var nIndex1, sProposerLink, sURLPrefix, sProposerEtherAddress, nProposalAmount_remaining, sAboveBelow, nMinimumWager, nMaximumWager
 	var nAcceptorTotal, nAcceptorProfit, sNetworkToLoginTo, sAcceptorEtherAddress, sHTML
 	var nAcceptedWagerAmount, sResolver, nProposerPayout, sProposerPayout_extra, sAcceptorLink,	nProposerNotBet, sProposerNotBet, sProposerWinningPercent
+	var sSportsOdd_Proposer, sSportsOdd_Acceptor
 ///////////////////
 // Questions
 ///////////////////
@@ -97,31 +97,31 @@ async function DoShowDataFromContract() {
 <input type=text id=idTxtCreate_WagerDeposit_` + nIndex1 + ` style='width:40px' onKeyPress='return CheckWagerDepositForEnter(event,` + nIndex1 + `)' onBlur=DoProfitCalculation(` + nIndex1 + `)>
 <b>Minimum Wager</b>
 <input type=text id=idTxtCreate_MinimumWager_` + nIndex1 + ` style='width:40px' onKeyPress='return NumericOnly(event)'>
-<b>Profit %</b>:
+<b>Profit % offered</b>:
 <select id=idCmbCreate_Profit_` + nIndex1 + ` onChange=DoProfitCalculation(` + nIndex1 + `)>
-<option value=10>If you lose, you pay 10% of Acceptor's wager. If you win, you receive 1,000% of your wager.</option>
-<option value=20>If you lose, you pay 20% of Acceptor's wager. If you win, you receive 500% of your wager.</option>
-<option value=33>If you lose, you pay 33% of Acceptor's wager. If you win, you receive 303% of your wager.</option>
-<option value=40>If you lose, you pay 40% of Acceptor's wager. If you win, you receive 250% of your wager.</option>
-<option value=50>If you lose, you pay 50% of Acceptor's wager. If you win, you receive 200% of your wager.</option>
-<option value=57>If you lose, you pay 57% of Acceptor's wager. If you win, you receive 175% of your wager.</option>
-<option value=66>If you lose, you pay 66% of Acceptor's wager. If you win, you receive 151% of your wager.</option>
-<option value=75>If you lose, you pay 75% of Acceptor's wager. If you win, you receive 133% of your wager.</option>
-<option value=80>If you lose, you pay 80% of Acceptor's wager. If you win, you receive 125% of your wager.</option>
-<option value=90>If you lose, you pay 90% of Acceptor's wager. If you win, you receive 111% of your wager.</option>
-<option value=95>If you lose, you pay 95% of Acceptor's wager. If you win, you receive 105% of your wager.</option>
-<option value=100 selected>If you lose, you pay 100% of Acceptor's wager. If you win, you receive 100% of your wager.</option>
-<option value=105>If you lose, you pay 105% of Acceptor's wager. If you win, you receive 95% of your wager.</option>
-<option value=111>If you lose, you pay 111% of Acceptor's wager. If you win, you receive 90% of your wager.</option>
-<option value=125>If you lose, you pay 125% of Acceptor's wager. If you win, you receive 80% of your wager.</option>
-<option value=133>If you lose, you pay 133% of Acceptor's wager. If you win, you receive 75% of your wager.</option>
-<option value=150>If you lose, you pay 151% of Acceptor's wager. If you win, you receive 66% of your wager.</option>
-<option value=175>If you lose, you pay 175% of Acceptor's wager. If you win, you receive 57% of your wager.</option>
-<option value=200>If you lose, you pay 200% of Acceptor's wager. If you win, you receive 50% of your wager.</option>
-<option value=250>If you lose, you pay 250% of Acceptor's wager. If you win, you receive 40% of your wager.</option>
-<option value=300>If you lose, you pay 303% of Acceptor's wager. If you win, you receive 33% of your wager.</option>
-<option value=500>If you lose, you pay 500% of Acceptor's wager. If you win, you receive 20% of your wager.</option>
-<option value=1000>If you lose, you pay 1,000% of Acceptor's wager. If you win, you receive 10% of your wager.</option>
+<option value=10>(-1000) If you lose, you pay 10% of Acceptor's wager. If you win, you receive 1,000% of your wager.</option>
+<option value=20>(-500) If you lose, you pay 20% of Acceptor's wager. If you win, you receive 500% of your wager.</option>
+<option value=33>(-300) If you lose, you pay 33% of Acceptor's wager. If you win, you receive 303% of your wager.</option>
+<option value=40>(-250) If you lose, you pay 40% of Acceptor's wager. If you win, you receive 250% of your wager.</option>
+<option value=50>(-200) If you lose, you pay 50% of Acceptor's wager. If you win, you receive 200% of your wager.</option>
+<option value=57>(-175) If you lose, you pay 57% of Acceptor's wager. If you win, you receive 175% of your wager.</option>
+<option value=66>(-151) If you lose, you pay 66% of Acceptor's wager. If you win, you receive 151% of your wager.</option>
+<option value=75>(-133) If you lose, you pay 75% of Acceptor's wager. If you win, you receive 133% of your wager.</option>
+<option value=80>(-125) If you lose, you pay 80% of Acceptor's wager. If you win, you receive 125% of your wager.</option>
+<option value=90>(-111) If you lose, you pay 90% of Acceptor's wager. If you win, you receive 111% of your wager.</option>
+<option value=95>(-105) If you lose, you pay 95% of Acceptor's wager. If you win, you receive 105% of your wager.</option>
+<option value=100 selected>(+100) If you lose, you pay 100% of Acceptor's wager. If you win, you receive 100% of your wager.</option>
+<option value=105>(+105) If you lose, you pay 105% of Acceptor's wager. If you win, you receive 95% of your wager.</option>
+<option value=111>(+111) If you lose, you pay 111% of Acceptor's wager. If you win, you receive 90% of your wager.</option>
+<option value=125>(+125) If you lose, you pay 125% of Acceptor's wager. If you win, you receive 80% of your wager.</option>
+<option value=133>(+133) If you lose, you pay 133% of Acceptor's wager. If you win, you receive 75% of your wager.</option>
+<option value=150>(+151) If you lose, you pay 151% of Acceptor's wager. If you win, you receive 66% of your wager.</option>
+<option value=175>(+175) If you lose, you pay 175% of Acceptor's wager. If you win, you receive 57% of your wager.</option>
+<option value=200>(+200) If you lose, you pay 200% of Acceptor's wager. If you win, you receive 50% of your wager.</option>
+<option value=250>(+250) If you lose, you pay 250% of Acceptor's wager. If you win, you receive 40% of your wager.</option>
+<option value=300>(+303) If you lose, you pay 303% of Acceptor's wager. If you win, you receive 33% of your wager.</option>
+<option value=500>(+500) If you lose, you pay 500% of Acceptor's wager. If you win, you receive 20% of your wager.</option>
+<option value=1000>(+1000) If you lose, you pay 1,000% of Acceptor's wager. If you win, you receive 10% of your wager.</option>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type=button value='Submit' onClick=DoCreate_Submit(` + nIndex1 + `) style='background:navy;color:white;font-size:15px;font-weight:bold'>
 `		
@@ -154,11 +154,13 @@ async function DoShowDataFromContract() {
 
 	var nNoRecords = 1
 	for (nIndex1 = 1; nIndex1 < anData.length; nIndex1++) {
-		if (gnaExpirationDates[anData[nIndex1][cnField_nQuestionID]] < gnCurrentDateTime || anData[nIndex1][cnField_nFinalized_DidYesWin] != 0 ) {
-			continue
-		}
 	
 		sProposerEtherAddress = gobjFromContract_Proposals.aadrProposerAddress[nIndex1]
+
+		if (gsMetaMaskAccount != sProposerEtherAddress && (gnaExpirationDates[anData[nIndex1][cnField_nQuestionID]] < gnCurrentDateTime || anData[nIndex1][cnField_nFinalized_DidYesWin] != 0 )) {
+			continue
+		}
+
 		nProposalAmount_remaining = (Math.floor(gobjWeb3_metamask.utils.fromWei(anData[nIndex1][cnField_nProposalAmount_remaining].toString(), 'ether')*100)/100).toFixed(2)
 		nMinimumWager = (Math.floor(gobjWeb3_metamask.utils.fromWei(anData[nIndex1][cnField_nMinimumWager].toString(), 'ether')*100)/100).toFixed(2)
 		if (nMinimumWager == 0) {
@@ -176,6 +178,19 @@ async function DoShowDataFromContract() {
 		nAcceptorTotal = (Math.floor(CleanFloat(parseFloat(nMaximumWager) + parseFloat(nAcceptorProfit))*100)/100).toFixed(2)
 
 		sProposerWinningPercent = Math.round(10000 / anData[nIndex1][cnField_nProfitPercentOffered])
+		if (sProposerWinningPercent >= 100 ) {
+			sSportsOdd_Proposer = "+" + sProposerWinningPercent
+			sSportsOdd_Acceptor = "-" + sProposerWinningPercent
+			if (sProposerWinningPercent == 100) {
+				sSportsOdd_Acceptor = "+" + sProposerWinningPercent
+			}
+		} else {
+			sSportsOdd_Proposer = "-" + anData[nIndex1][cnField_nProfitPercentOffered]
+			sSportsOdd_Acceptor = "+" + anData[nIndex1][cnField_nProfitPercentOffered]
+			if (anData[nIndex1][cnField_nProfitPercentOffered] == 100) {
+				sSportsOdd_Proposer = "+" + anData[nIndex1][cnField_nProfitPercentOffered]
+			}
+		}
 
 		sAboveBelow_Proposer = "above"
 		sAboveBelow_Acceptor = "below"
@@ -214,15 +229,15 @@ async function DoShowDataFromContract() {
 			sHTML += "<table cellspacing=0 cellpadding=0 bgcolor=black><tr><td><font color=white>" + gsaQuestions[anData[nIndex1][cnField_nQuestionID]] + "</td></tr></table>"
 			
 			sHTML += "<table width=100% cellspacing=0 cellpadding=0><tr>"
-			sHTML += "<td>You offered <b>" + anData[nIndex1][cnField_nProfitPercentOffered] + "% <i>profit</i></b>. If someone bets <b>" + nMaximumWager + "</b>, you risk losing <b>" + nAcceptorProfit + "</b>. " +
-						"If you win, you receive a <i><b>profit</b></i> that is <b>" + sProposerWinningPercent + "%</b> of your risk.</td>"
+			sHTML += "<td>You offered <b>" + anData[nIndex1][cnField_nProfitPercentOffered] + "% <i>profit</i></b> (" + sSportsOdd_Acceptor + "). If someone bets <b>" + nMaximumWager + "</b>, you risk losing <b>" + nAcceptorProfit + "</b>. " +
+						"If you win, you receive a <i><b>profit</b></i> that is <b>" + sProposerWinningPercent + "%</b> of your risk (" + sSportsOdd_Proposer + ").</td>"
 		} else {
 			sHTML += "<td>On " + DoGetFormattedDateTime(anData[nIndex1][cnField_nDateCreated]) + ", <a target=_ex class=bluelink href='" + sProposerLink + "'>this Proposer (" + sProposerEtherAddress.substr(0,6) + 
 				"..)</a> deposited <b>" + nProposalAmount_remaining + "</b> to wager that the answer to the following question is " + sYesNo_Owner + ":</td>"
 			sHTML += "<td align=right><b>Minimum wager:</b> " + nMinimumWager + "&nbsp;&nbsp; <b>Maximum wager:</b> " + nMaximumWager + "</td></tr></table>"
 			sHTML += "<table cellspacing=0 cellpadding=0 bgcolor=black><tr><td><font color=white>" + gsaQuestions[anData[nIndex1][cnField_nQuestionID]] + "</td></tr></table>"
 			sHTML += "<table width=100% cellspacing=0 cellpadding=0><tr>"
-			sHTML += "<td><b>" + anData[nIndex1][cnField_nProfitPercentOffered] + "% <i>profit</i></b> is offered. If you wager <b>" + nMaximumWager + "</b> and win, you will receive <b>" + nAcceptorTotal + 
+			sHTML += "<td><b>" + anData[nIndex1][cnField_nProfitPercentOffered] + "% <i>profit</i></b> is offered (" + sSportsOdd_Acceptor + "). If you wager <b>" + nMaximumWager + "</b> and win, you will receive <b>" + nAcceptorTotal + 
 				"</b>, for a <i><b>profit</b></i> of <b>" + nAcceptorProfit + "</b>.</td>"
 		}
 		sHTML += "<td align=right>"
@@ -306,6 +321,20 @@ async function DoShowDataFromContract() {
 		nAcceptorProfit = (Math.floor(CleanFloat(nAcceptedWagerAmount * (anData[nIndex1][cn_D_Field_nProfitPercentOffered] / 100))*100)/100).toFixed(2)
 		nAcceptorTotal = (Math.floor(CleanFloat(parseFloat(nAcceptedWagerAmount) + parseFloat(nAcceptorProfit))*100)/100).toFixed(2)
 		sProposerWinningPercent = Math.round(10000 / anData[nIndex1][cn_D_Field_nProfitPercentOffered])
+	
+		if (sProposerWinningPercent >= 100 ) {
+			sSportsOdd_Proposer = "+" + sProposerWinningPercent
+			sSportsOdd_Acceptor = "-" + sProposerWinningPercent
+			if (sProposerWinningPercent == 100) {
+				sSportsOdd_Acceptor = "+" + sProposerWinningPercent
+			}
+		} else {
+			sSportsOdd_Proposer = "-" + anData[nIndex1][cn_D_Field_nProfitPercentOffered]
+			sSportsOdd_Acceptor = "+" + anData[nIndex1][cn_D_Field_nProfitPercentOffered]
+			if (anData[nIndex1][cn_D_Field_nProfitPercentOffered] == 100) {
+				sSportsOdd_Proposer = "+" + anData[nIndex1][cn_D_Field_nProfitPercentOffered]
+			}
+		}
 	
 		sProposerNotBet = ""
 		nProposerNotBet = CleanFloat(parseFloat(nProposerPayout) - (parseFloat(nAcceptorProfit) + parseFloat(nAcceptedWagerAmount) )).toFixed(2)
@@ -401,7 +430,7 @@ async function DoShowDataFromContract() {
 					sYouWonOrLost = "<font color=green><b>YOU WON!</b></font> To receive <b>" + nAcceptorTotal + "</b> (for a <b>" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% <i>profit</i></b> of <b>" + nAcceptorProfit + "</b>), " +
 						" click <b>[Resolve Wager]</b>."
 				} else {
-					sYouWonOrLost = "If you win, you will receive <b>" + nAcceptorTotal + "</b>, for a <b>" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% <i>profit</i></b> of <b>" + nAcceptorProfit + "</b>."
+					sYouWonOrLost = "If you win, you will receive <b>" + nAcceptorTotal + "</b>, for a <b>" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% <i>profit</i></b> (" + sSportsOdd_Acceptor + ") of <b>" + nAcceptorProfit + "</b>."
 				}
 
 				sHTML_Unresolved += "On " + DoGetFormattedDateTime(anData[nIndex1][cn_D_Field_nDateCreated]) + ", you made a <b>" + nAcceptedWagerAmount + "</b> wager with " + 
@@ -422,8 +451,8 @@ async function DoShowDataFromContract() {
 						sYouWonOrLost += " To receive your remaining deposit of <b>" + nProposalAmount_remaining + "</b>, click <b>[Resolve Wager]</b>."
 					}
 				} else {
-					sYouWonOrLost = "If you win, you will receive <b>" + nAcceptorTotal + "</b>, for a <b>" + sProposerWinningPercent + "% <i>profit</i></b> of <b>" + nAcceptedWagerAmount + "</b>" + 
-						" (plus your remaining deposit of <b>" + nProposalAmount_remaining + "</b>)."
+					sYouWonOrLost = "If you win, you will receive <b>" + nAcceptorTotal + "</b>, for a <b>" + sProposerWinningPercent + "% <i>profit</i></b> (" + sSportsOdd_Proposer + ") of <b>" + nAcceptedWagerAmount + "</b>" +
+						", plus your remaining deposit of <b>" + nProposalAmount_remaining + "</b>."
 
 				}
 				sHTML_Unresolved += "On " + DoGetFormattedDateTime(anData[nIndex1][cn_D_Field_nDateCreated]) + ", <a target=_ex class=bluelink href='" + sAcceptorLink + 
@@ -436,8 +465,7 @@ async function DoShowDataFromContract() {
 			sHTML_Unresolved += "<td align=right>"
 			
 			if (anData[nIndex1][cn_D_Field_nFinalized_DidYesWin] == 0) {
-				sHTML_Unresolved += "The <font color=maroon><b>[Resolve Wager]</b></font> button will be displayed within 30 minutes after the <font color=maroon><b>Resolution Time</b></font> (" + 
-				"<font color=navy><b>" + DoGetFormattedDateTime(gnaExpirationDates[anData[nIndex1][cn_D_Field_nQuestionID]]) + "</b></font>)"
+				sHTML_Unresolved += "The <font color=maroon><b>[Resolve Wager]</b></font> button will be displayed within 30 minutes after <font color=navy><b>" + DoGetFormattedDateTime(gnaExpirationDates[anData[nIndex1][cn_D_Field_nQuestionID]]) + "</b></font>"
 			} else {
 				if (nYouLost == 0) {
 					sHTML_Unresolved += "<input type=button value='Resolve Wager' onClick=DoResolveWager(" + nIndex1 + ") style='background:black;color:white;font-size:13px;font-weight:bold'>"
@@ -566,7 +594,7 @@ async function DoGetMetaMaskAccount() {
 				nBalance = nApprovedDai
 			}
 			gnMetaMaskBalance = (Math.floor(gobjWeb3_metamask.utils.fromWei(nBalance.toString(), 'ether')*100)/100).toFixed(2)
-			sTemp = "<font color=green>DAI:</font> $" + gnMetaMaskBalance
+			sTemp = "<font color=green>DAI:</font> " + gnMetaMaskBalance
 		} else {
 			sTemp = "<input type=button value='Unlock DAI' style='background:navy;color:white;font-size:13px;font-weight:bold' onClick=DoUnlockDAI()>"
 		}
@@ -808,7 +836,7 @@ function CleanFloat(nNumber) {
 		<td width=40%>
 			<span id=idSpanMetaMaskStatus></span>
 		</td>
-		<td width=20% align=center><font color=maroon style='font-size:16px'><b>Prediction Wagers v1.1</b></font></td>
+		<td width=20% align=center><font color=maroon style='font-size:16px'><b>Prediction Wagers v1.0</b></font></td>
 		<td align=center width=30%><b><font color=red>Currency is DAI, Times are UTC </font></b>&nbsp;&nbsp; Current: <span id=idSpanCurrentTime></span></td>
 		<td align=right width=10%>
 			<a target=_ext href=TermsOfUse.htm class=bluelink><b>Terms of Use</b></a>&nbsp;&nbsp;
@@ -834,13 +862,9 @@ function CleanFloat(nNumber) {
 
 <div id=idBottomFooter style='position: absolute; top: 675px; width: 1366px'>
 <table cellspacing=0 cellpadding=0 width=98% align=center><tr>
-<td><b><font color=maroon>See the event logs for this contract:</font>
-&nbsp;&nbsp;<span id=idSpanEventLogLink_Kovan></span>
-&nbsp;&nbsp;<span id=idSpanEventLogLink_Mainnet></span>
-</b>
+<td>Only use this user interface if it is legal where you are located. See the <a target=_ex class=bluelink href='TermsOfUse.htm'>Terms of Use</a>.
 </td>
 <td align=right>
-Only use this user interface if it is legal where you are located. See the <a target=_ex class=bluelink href='TermsOfUse.htm'>Terms of Use</a>.
 </td>
 </tr></table>
 
@@ -850,7 +874,7 @@ Only use this user interface if it is legal where you are located. See the <a ta
 The contract adds a 1.5% transaction fee to each deposit or wager.
 </td>
 <td align=right>
-This version (1.1) displays wagers from <b>4/1/2020-4/30/2020</b>. <a target=_ex class=bluelink href='https://Etherlogs.com'>Click here to see other versions.</a>
+This version (1.0) displays wagers from <b>4/1/2020-4/30/2020</b>. <a target=_ex class=bluelink href='https://Etherlogs.com'>Click here to see other versions.</a>
 </td>
 </tr></table>
 </div>
