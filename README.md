@@ -16,7 +16,7 @@ The Proposer can post a wager by selecting the following parameters, pertaining 
 This dApp has the following advantages over other prediction-based dApps:
 1. <b>Immediate payout:</b> You don't have to wait for dispute rounds, or for a consensus. When a wager resolves, your winnings are immediately transferred to your account.
 2. <b>No risk of "Invalid market":</b> You don't have to worry that your winning wager is an "invalid market".
-3. <b>Easy to Audit:</b> The entire client-side javascript User Interface is contained in just one HTML file. The solidity contract address is shown, so you can view the functions at http://remix.ethereum.org/.
+3. <b>Easy to Audit:</b> The entire client-side javascript User Interface is contained in just one HTML file. The solidity contract address is shown, so you can view the functions at [<b>Remix</b>](http://remix.ethereum.org/).
 4. <b>Transportable:</b> There are no server-side calls. The User Interface can be run from any server.
 
 To use the User Interface, you must be logged into MetaMask, with either the <b>Mainnet</b> or <b>Kovan Testnet</b> selected.
