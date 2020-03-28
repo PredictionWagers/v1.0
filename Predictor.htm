@@ -12,17 +12,11 @@ input[type=button] {cursor:pointer}
 <script src="ERC20.abi"></script>
 <script src="Predictor.abi"></script>
 <script>
-// DEVTEST: Comment next line
-var gnDoingDev = 0
 
 var gsaQuestions = ["According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 19,000 on <font color=lime><b>March 16 2020 4:00pm</b></font>?",
 "According to the <a target=_ex class=yellowlink href=https://www.predictit.org/markets/detail/3698/Who-will-win-the-2020-US-presidential-election>PredictIt.org</a> market '<b>Who will win the 2020 U.S. presidential election?</b>', will Trump's price be higher than 56 cents at <font color=lime><b>March 16 2020 4:00pm</b></font>?"
 ]
-
-// DEVTEST
-//var gnaExpirationDates = [1287744069,1587744069]
 var gnaExpirationDates = [1587744069,1587744069]
-
 var gobjDAIContract, gobjContract_Predictor_MetaMask, gobjWeb3_metamask
 var gnMetaMaskOK = 0
 var gsMetaMaskAccount = ""
@@ -79,7 +73,7 @@ async function DoShowDataFromContract() {
 // Questions
 ///////////////////
 	sHTML = ""
-	for (nIndex1 = 0; nIndex1 < gsaQuestions.length; nIndex1++) {
+	for (nIndex1 = gsaQuestions.length-1; nIndex1 >= 0; nIndex1--) {
 		if (gnaExpirationDates[nIndex1] < gnCurrentDateTime) {
 			continue
 		}
@@ -153,7 +147,7 @@ async function DoShowDataFromContract() {
 	sHTML += "<table width=99.5% bgcolor=#ffffff border=1 cellspacing=0 cellpadding=4 align=center>"
 
 	var nNoRecords = 1
-	for (nIndex1 = 1; nIndex1 < anData.length; nIndex1++) {
+	for (nIndex1 = anData.length-1; nIndex1 >= 1; nIndex1--) {
 	
 		sProposerEtherAddress = gobjFromContract_Proposals.aadrProposerAddress[nIndex1]
 
@@ -364,7 +358,7 @@ async function DoShowDataFromContract() {
 			sHTML_Resolved += "<tr><td>"
 			if (anAddresses[nIndex1][cn_A_Field_adrAcceptorAddress] == gsMetaMaskAccount && anData[nIndex1][cn_D_Field_nFinalized_DidProposerWin] == "0") {
 			// Acceptor Won
-				sHTML_Resolved += "<b><font color=green>You won " + nAcceptorProfit + " (" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% profit).</font></b>&nbsp;&nbsp;"
+				sHTML_Resolved += "<b><font color=green>You won " + nAcceptorProfit + "</font></b>, for a " + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% profit (" + sSportsOdd_Acceptor + ").&nbsp;&nbsp;"
 				sHTML_Resolved += "On <b>" + DoGetFormattedDateTime(anData[nIndex1][cn_D_Field_nDateCreated]) + "</b>, you made a <b>" + nAcceptedWagerAmount + 
 					"</b> wager with <a target=_ex class=bluelink href='" + sProposerLink + "'>this Proposer (" + sProposerEtherAddress.substr(0,6) + "..)</a>. " + 
 					"You bet that the answer to the following question is " +  sYesNo_Others + ":"
@@ -390,7 +384,7 @@ async function DoShowDataFromContract() {
 
 			if (anAddresses[nIndex1][cn_A_Field_adrAcceptorAddress] != gsMetaMaskAccount && anData[nIndex1][cn_D_Field_nFinalized_DidProposerWin] != "0") {
 			// Proposer Won
-				sHTML_Resolved += "<b><font color=green>You won " + nAcceptedWagerAmount + " (" + sProposerWinningPercent + "% profit).</font></b>&nbsp;&nbsp;"
+				sHTML_Resolved += "<b><font color=green>You won " + nAcceptedWagerAmount + "</font></b>, for a " + sProposerWinningPercent + "% profit (" + sSportsOdd_Proposer + ").&nbsp;&nbsp;"
 				sHTML_Resolved += "On <b>" + DoGetFormattedDateTime(anData[nIndex1][cn_D_Field_nDateCreated]) + "</b>, " + 
 					"<a target=_ex class=bluelink href='" + sAcceptorLink + "'>this Acceptor (" + sAcceptorEtherAddress.substr(0,6) + "..)</a> made a <b>" + nAcceptedWagerAmount + "</b> wager with you. " +
 					"You bet that the answer to the following question is " +  sYesNo_Owner + ":"
@@ -402,7 +396,7 @@ async function DoShowDataFromContract() {
 
 			if (anAddresses[nIndex1][cn_A_Field_adrAcceptorAddress] != gsMetaMaskAccount && anData[nIndex1][cn_D_Field_nFinalized_DidProposerWin] == "0") {
 			// Proposer Lost
-				sHTML_Resolved += "<b><font color=red>You lost " + nAcceptorProfit + " (" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% loss).</font></b>&nbsp;&nbsp;"
+				sHTML_Resolved += "<b><font color=red>You lost " + nAcceptorProfit + "</font></b>, for a " + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% loss (" + sSportsOdd_Acceptor + ").&nbsp;&nbsp;"
 				sHTML_Resolved += "On <b>" + DoGetFormattedDateTime(anData[nIndex1][cn_D_Field_nDateCreated]) + "</b>, " + 
 					"<a target=_ex class=bluelink href='" + sAcceptorLink + "'>this Acceptor (" + sAcceptorEtherAddress.substr(0,6) + "..)</a> made a <b>" + nAcceptedWagerAmount + "</b> wager with you. " +
 					"You bet that the answer to the following question is " +  sYesNo_Owner + ":"
@@ -427,7 +421,8 @@ async function DoShowDataFromContract() {
 					sYouWonOrLost = "<font color=red><b>YOU LOST.</b></font>"
 					nYouLost = 1
 				} else if (anData[nIndex1][cn_D_Field_nFinalized_DidYesWin] != 0) {
-					sYouWonOrLost = "<font color=green><b>YOU WON!</b></font> To receive <b>" + nAcceptorTotal + "</b> (for a <b>" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% <i>profit</i></b> of <b>" + nAcceptorProfit + "</b>), " +
+					sYouWonOrLost = "<font color=green><b>YOU WON!</b></font> To receive <b>" + nAcceptorTotal + "</b> (for a <b>" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + 
+					"% <i>profit</i></b> (" + sSportsOdd_Acceptor + ") of <b>" + nAcceptorProfit + "</b>), " +
 						" click <b>[Resolve Wager]</b>."
 				} else {
 					sYouWonOrLost = "If you win, you will receive <b>" + nAcceptorTotal + "</b>, for a <b>" + anData[nIndex1][cn_D_Field_nProfitPercentOffered] + "% <i>profit</i></b> (" + sSportsOdd_Acceptor + ") of <b>" + nAcceptorProfit + "</b>."
@@ -442,7 +437,7 @@ async function DoShowDataFromContract() {
 			} else {
 				//Proposer is viewing
 				if (anData[nIndex1][cn_D_Field_nFinalized_DidYesWin] == anData[nIndex1][cn_D_Field_nPredictedYesNo]) {
-					sYouWonOrLost = "<font color=green><b>YOU WON!</b></font> To receive <b>" + nAcceptorTotal + "</b>, for a <b>" + sProposerWinningPercent + "% <i>profit</i></b> of <b>" + nAcceptedWagerAmount + "</b>" +
+					sYouWonOrLost = "<font color=green><b>YOU WON!</b></font> To receive <b>" + nAcceptorTotal + "</b>, for a <b>" + sProposerWinningPercent + "% <i>profit</i></b> (" + sSportsOdd_Proposer + ") of <b>" + nAcceptedWagerAmount + "</b>" +
 					" (plus your remaining deposit of <b>" + nProposalAmount_remaining + "</b>)," +
 						" click <b>[Resolve Wager]</b>."
 				} else if (anData[nIndex1][cn_D_Field_nFinalized_DidYesWin] != 0) {
@@ -522,46 +517,6 @@ async function DoUnlockDAI() {
 		alert("Error: " + error);
 	}
 	await DoGetMetaMaskAccount()
-
-/*	
-// User transfers DAI to contract
-	try {
-		var objOption = {from: gsMetaMaskAccount};
-
-		gobjDAIContract.methods.transferFrom(
-			gsMetaMaskAccount, gcsContract_Predictor_live, 4
-		).send(objOption, async function(error,result){
-			if (!error) {
-				console.log("Returned from 'transferFrom'")
-				console.log(result)
-			} else {
-					alert("Error: " + error.message);
-			}
-		});
-	} catch (error) {
-		alert("Error: " + error);
-	}
-*/
-
-/*
-// Contract transfers DAI to user
-	try {
-		var objOption = {from: gsMetaMaskAccount};
-
-		gobjContract_Predictor_MetaMask.methods.sendDAI(
-			gsMetaMaskAccount, 1
-		).send(objOption, async function(error,result){
-			if (!error) {
-				console.log("Returned from 'transfer'")
-				console.log(result)
-			} else {
-					alert("Error: " + error.message);
-			}
-		});
-	} catch (error) {
-		alert("Error: " + error);
-	}
-*/	
 }
 
 async function DoGetMetaMaskAccount() {
@@ -587,7 +542,6 @@ async function DoGetMetaMaskAccount() {
 		var nApprovedDai = parseInt(await gobjDAIContract.methods.allowance(gsMetaMaskAccount,gcsContract_Predictor_live).call())
 		
 		var sTemp = ""
-//DEVTEST
 		if (nApprovedDai) {
 			var nBalance = await gobjDAIContract.methods.balanceOf(gsMetaMaskAccount).call()
 			if (nApprovedDai < nBalance) {
