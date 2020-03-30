@@ -14,10 +14,16 @@ input[type=button] {cursor:pointer}
 <script>
 
 var gsaQuestions = ["According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 19,000 on <font color=lime><b>March 16 2020 4:00pm</b></font>?",
-"According to the <a target=_ex class=yellowlink href=https://www.predictit.org/markets/detail/3698/Who-will-win-the-2020-US-presidential-election>PredictIt.org</a> market '<b>Who will win the 2020 U.S. presidential election?</b>', will Trump's price be higher than 56 cents at <font color=lime><b>March 16 2020 4:00pm</b></font>?"
+"According to the <a target=_ex class=yellowlink href=https://www.predictit.org/markets/detail/3698/Who-will-win-the-2020-US-presidential-election>PredictIt.org</a> market '<b>Who will win the 2020 U.S. presidential election?</b>', will Trump's price be higher than 56 cents at <font color=lime><b>March 16 2020 4:00pm</b></font>?",
+"According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 19,000 on <font color=lime><b>March 16 2020 1:00pm</b></font>?"
 ]
 
-var gnaExpirationDates = [1587744069,
+//var gnaExpirationDates = [1587744069,
+//1287744069
+//]
+
+var gnaExpirationDates = [1287744069,
+1287744069,
 1287744069
 ]
 
@@ -30,8 +36,8 @@ var gcnLatestResolutionDate = 1577577600
 var gsDaiContractAddress_Kovan = '0x4f96fe3b7a6cf9725f59d353f723c1bdb64ca6aa'
 var gsDaiContractAddress_Mainnet = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
 
-var gcsContract_Predictor_Kovan = "0xa582d9E693f3D085a6e5d151ACEC0f8F43dfb4FE";
-// https://kovan.etherscan.io/address/0xa582d9E693f3D085a6e5d151ACEC0f8F43dfb4FEF
+var gcsContract_Predictor_Kovan = "0xf8109041a278a268d7e8045cB82D20B180F7ee59";
+// https://kovan.etherscan.io/address/0xf8109041a278a268d7e8045cB82D20B180F7ee59
 var gcsContract_Predictor_Mainnet = "0x739194690d334f13104A78784F7FDAD48B4067c7";
 var gcsContract_Predictor_live = gcsContract_Predictor_Kovan
 var gsDaiContractAddress_live = gsDaiContractAddress_Kovan
@@ -69,7 +75,7 @@ async function DoLoad(){
 }
 
 async function DoShowDataFromContract() {
-	var nIndex1, sProposerLink, sURLPrefix, sProposerEtherAddress, nProposalAmount_remaining, sAboveBelow, nMinimumWager, nMaximumWager
+	var nIndex1, sProposerLink, sProposerEtherAddress, nProposalAmount_remaining, sAboveBelow, nMinimumWager, nMaximumWager
 	var nAcceptorTotal, nAcceptorProfit, sNetworkToLoginTo, sAcceptorEtherAddress, sHTML
 	var nAcceptedWagerAmount, sResolver, nProposerPayout, sProposerPayout_extra, sAcceptorLink,	nProposerNotBet, sProposerNotBet, sProposerWinningPercent
 	var sSportsOdd_Proposer, sSportsOdd_Acceptor
@@ -133,7 +139,6 @@ async function DoShowDataFromContract() {
 ///////////////////
 // Open Proposals
 ///////////////////
-	var sURLPrefix = ""
 	var anData = gobjFromContract_Proposals.anData
 	
 	var cnField_nDateCreated = 0;
@@ -165,13 +170,12 @@ async function DoShowDataFromContract() {
 			nMinimumWager = .01
 		}
 		nMaximumWager = (Math.floor(CleanFloat(nProposalAmount_remaining * (100 / anData[nIndex1][cnField_nProfitPercentOffered]))*100)/100).toFixed(2)
-		if (nMinimumWager > nMaximumWager || nProposalAmount_remaining == 0 || (gsMetaMaskAccount != sProposerEtherAddress && anData[nIndex1][cnField_nResolutionDate] <= gnCurrentDateTime) ) {
+		if (parseFloat(nMinimumWager) > parseFloat(nMaximumWager) || nProposalAmount_remaining == 0 || (gsMetaMaskAccount != sProposerEtherAddress && parseInt(anData[nIndex1][cnField_nResolutionDate]) <= gnCurrentDateTime) ) {
 			continue;
 		}
 		nNoRecords = 0
 		
-		sURLPrefix = ""
-		sProposerLink = "https://" + sURLPrefix + "etherscan.io/address/" + sProposerEtherAddress
+		sProposerLink = "https://" + gsNetwork_prefix + "etherscan.io/address/" + sProposerEtherAddress
 		nAcceptorProfit = (Math.floor(CleanFloat(nMaximumWager * (anData[nIndex1][cnField_nProfitPercentOffered] / 100))*100)/100).toFixed(2)
 		nAcceptorTotal = (Math.floor(CleanFloat(parseFloat(nMaximumWager) + parseFloat(nAcceptorProfit))*100)/100).toFixed(2)
 
@@ -312,9 +316,8 @@ async function DoShowDataFromContract() {
 		
 		sProposerEtherAddress = anAddresses[nIndex1][cn_A_Field_adrProposerAddress]
 		sAcceptorEtherAddress = anAddresses[nIndex1][cn_A_Field_adrAcceptorAddress]
-		sURLPrefix = ""
-		sProposerLink = "https://" + sURLPrefix + "etherscan.io/address/" + sProposerEtherAddress
-		sAcceptorLink = "https://" + sURLPrefix + "etherscan.io/address/" + sAcceptorEtherAddress
+		sProposerLink = "https://" + gsNetwork_prefix + "etherscan.io/address/" + sProposerEtherAddress
+		sAcceptorLink = "https://" + gsNetwork_prefix + "etherscan.io/address/" + sAcceptorEtherAddress
 
 		nAcceptorProfit = (Math.floor(CleanFloat(nAcceptedWagerAmount * (anData[nIndex1][cn_D_Field_nProfitPercentOffered] / 100))*100)/100).toFixed(2)
 		nAcceptorTotal = (Math.floor(CleanFloat(parseFloat(nAcceptedWagerAmount) + parseFloat(nAcceptorProfit))*100)/100).toFixed(2)
@@ -548,7 +551,7 @@ async function DoGetMetaMaskAccount() {
 		var sTemp = ""
 		if (nApprovedDai) {
 			var nBalance = await gobjDAIContract.methods.balanceOf(gsMetaMaskAccount).call()
-			if (nApprovedDai < nBalance) {
+			if (nApprovedDai < parseFloat(nBalance)) {
 				nBalance = nApprovedDai
 			}
 			gnMetaMaskBalance = (Math.floor(gobjWeb3_metamask.utils.fromWei(nBalance.toString(), 'ether')*100)/100).toFixed(2)
@@ -612,7 +615,7 @@ async function DoCreate_Submit(nQuestionID) {
 		}
 	}
 	if (nNG_WagerDeposit) {
-		alert("The Deposit must be at least .01, and less than your DAI Balance.")
+		alert("The Deposit must be at least .01, and less than your DAI Balance (after the 1.5% transaction fee).")
 		return
 	}
 
@@ -637,7 +640,7 @@ async function DoCreate_Submit(nQuestionID) {
 		var nProfitPercent = document.getElementById("idCmbCreate_Profit_" + nQuestionID).options[document.getElementById("idCmbCreate_Profit_" + nQuestionID).selectedIndex].value
 		var nMaximumWager = Math.floor(CleanFloat(document.getElementById("idTxtCreate_WagerDeposit_" + nQuestionID).value * (100 / nProfitPercent))* 100) / 100
 
-		if (nMinimumWager > nMaximumWager) {
+		if (parseFloat(nMinimumWager) > parseFloat(nMaximumWager)) {
 			alert("Minimum Wager cannot be greater than the Acceptor's Maximum Wager.")
 			return
 		}
@@ -703,7 +706,7 @@ async function DoGetCurrentDateTime() {
 async function DoAcceptor_Submit(nProposalID, nMinimumWager, nMaximumWager) {
 
 	var nWager = parseFloat(document.getElementById("idTxtAcceptor_WagerDeposit" + nProposalID).value)
-	if (isNaN(nWager) || nWager < nMinimumWager || nWager > nMaximumWager) {
+	if (isNaN(nWager) || nWager < parseFloat(nMinimumWager) || nWager > parseFloat(nMaximumWager)) {
 		alert("Please enter a Wager that is between the Minimum and Maximum wager shown.")
 		return
 	}
