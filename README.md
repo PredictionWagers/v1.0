@@ -19,7 +19,7 @@ This dApp has the following advantages over other prediction-based dApps:
 3. <b>Easy to Audit:</b> The entire client-side javascript User Interface is contained in just one HTML file. The solidity contract address is shown, so you can view the functions at [<b>Remix</b>](http://remix.ethereum.org/).
 4. <b>Transportable:</b> There are no server-side calls. The User Interface can be run from any server.
 
-To use the User Interface, you must be logged into MetaMask, with either the <b>Mainnet</b> or <b>Kovan Testnet</b> selected.
+To use the User Interface, you must use the Chrome browser and be logged into MetaMask, with either the <b>Mainnet</b> or <b>Kovan Testnet</b> selected.
 1. Click the <b>[Unlock DAI]</b> button, so the dApp can access DAI from the account that is selected in MetaMask.
 2. The Proposer shall deposit DAI to cover their side of the wager. For example, if the Proposer offers a 125% profit on a 10 DAI wager, then they must deposit 12.5.
 3. The Proposer may withdraw their deposit at any time before it is accepted.
