@@ -13,18 +13,10 @@ input[type=button] {cursor:pointer}
 <script src="Predictor.abi"></script>
 <script>
 
-var gsaQuestions = ["According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 19,000 on <font color=lime><b>March 16 2020 4:00pm</b></font>?",
-"According to the <a target=_ex class=yellowlink href=https://www.predictit.org/markets/detail/3698/Who-will-win-the-2020-US-presidential-election>PredictIt.org</a> market '<b>Who will win the 2020 U.S. presidential election?</b>', will Trump's price be higher than 56 cents at <font color=lime><b>March 16 2020 4:00pm</b></font>?",
-"According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 19,000 on <font color=lime><b>March 16 2020 1:00pm</b></font>?"
+var gsaQuestions = ["According to <a target=_ex class=yellowlink href=https://finance.yahoo.com/quote/%5EDJI?p=^DJI>Yahoo Finance</a>, will the <b>Dow Jones Industrial Average</b> be higher than 22,200 on <font color=lime><b>March 31 2020 6:45pm</b></font>?"
 ]
 
-//var gnaExpirationDates = [1587744069,
-//1287744069
-//]
-
-var gnaExpirationDates = [1587744069,
-1287744069,
-1587744069
+var gnaExpirationDates = [1585680000
 ]
 
 var gobjDAIContract, gobjContract_Predictor_MetaMask, gobjWeb3_metamask
@@ -36,9 +28,11 @@ var gcnLatestResolutionDate = 1577577600
 var gsDaiContractAddress_Kovan = '0x4f96fe3b7a6cf9725f59d353f723c1bdb64ca6aa'
 var gsDaiContractAddress_Mainnet = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
 
-var gcsContract_Predictor_Kovan = "0xC2351a81D498eD1919cB31dB2740C050E9C9F7Cc";
-// https://kovan.etherscan.io/address/0xC2351a81D498eD1919cB31dB2740C050E9C9F7Cc
-var gcsContract_Predictor_Mainnet = "0x739194690d334f13104A78784F7FDAD48B4067c7";
+var gcsContract_Predictor_Kovan = "0x1649242853E60C4265d74414c12Da7e2ce47DA3b";
+// https://kovan.etherscan.io/address/0x1649242853E60C4265d74414c12Da7e2ce47DA3b
+var gcsContract_Predictor_Mainnet = "0xc07291bbf52e8269552c0d53f14d915e1c1c945c";
+// https://etherscan.io/address/0xc07291bbf52e8269552c0d53f14d915e1c1c945c
+
 var gcsContract_Predictor_live = gcsContract_Predictor_Kovan
 var gsDaiContractAddress_live = gsDaiContractAddress_Kovan
 var gsNetwork_name = ""
@@ -60,7 +54,7 @@ async function DoLoad(){
 		ethereum.enable()
 		await DoGetMetaMaskAccount()
 	} else {
-		da.idSpanMetaMaskStatus.innerHTML = "<i>Please use <b>MetaMask</b> to login to Kovan or Mainnet, then refresh this page.</i>"	
+		da.idSpanMetaMaskStatus.innerHTML = "<i>Please use <b>MetaMask</b> to login to the Mainnet, then refresh this page.</i>"	
 	}
 	
 	da.idSpanCurrentTime.innerHTML = await DoGetCurrentDateTime()
@@ -563,7 +557,7 @@ async function DoGetMetaMaskAccount() {
 				"' class=bluelink>" + gsMetaMaskAccount.substring(0,6) + "..</a> " + sTemp
 		da.idDivCreateWagerProposal.style.display = "inline"
 	} else {
-		da.idSpanMetaMaskStatus.innerHTML = "<i>Please use <b>MetaMask</b> to login to Kovan or Mainnet, then refresh this page.</i>"
+		da.idSpanMetaMaskStatus.innerHTML = "<i>Please use <b>MetaMask</b> to login to the Mainnet, then refresh this page.</i>"
 	}
 }
 
