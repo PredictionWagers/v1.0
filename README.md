@@ -19,7 +19,7 @@ This dApp has the following advantages over other prediction-based dApps:
 3. <b>Easy to Audit:</b> The entire client-side javascript User Interface is contained in just one HTML file. The solidity contract address is shown, so you can view the functions at [<b>Remix</b>](http://remix.ethereum.org/).
 4. <b>Transportable:</b> There are no server-side calls. The User Interface can be run from any server.
 
-To use the User Interface, you must use the Chrome or Firefox browser and be logged into MetaMask, with either the <b>Mainnet</b> or <b>Kovan Testnet</b> selected.
+To use the User Interface, you must use the Chrome or Firefox browser, and be logged into MetaMask with <b>Mainnet</b> selected.
 1. Click the <b>[Unlock DAI]</b> button, so the dApp can access DAI from the account that is selected in MetaMask.
 2. The Proposer shall deposit DAI to cover their side of the wager. For example, if the Proposer offers a 125% profit on a 10 DAI wager, then they must deposit 12.5.
 3. The Proposer may withdraw their deposit at any time before it is accepted.
@@ -35,8 +35,6 @@ For example, if you enter a wager for .03 that pays 50% profit, then you will re
 11. The dApp creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of 1 DAI shall require a gross deposit of 1.015.
 12. A new version of this contract and User Interface will be released periodically. This help file shall contain links to all previous versions, so if you have a balance that has not yet been resolved, you may access the previous version to do so.
 
-<b><i>Contracts for the Prediction Wagers dApp</i></b>:  
-[Mainnet](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
-[Kovan](https://kovan.etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)  
+<b><i>[Contract for the Prediction Wagers dApp](https://etherscan.io/address/0x739194690d334f13104A78784F7FDAD48B4067c7)</i></b>
 
 The <b>Prediction Wagers</b> dApp and user interface were created by an anonymous author, and are publicly accessible. They can be run from any server, so this Github user is not responsible or liable for their usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
