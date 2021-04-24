@@ -11,7 +11,7 @@ Unlike other websites, this app does not interact with any server (other than re
 To use the app, I will walk you through the following instructions:
 * Install the Metamask extension into the Chrome browser.
 * Text me your public Ethereum address.
-* Select the Kovan Test Network from the dropdown. You will see 1 Kovan I sent you, which is used for "gas".
+* Select the Kovan Test Network from the dropdown. You will have 1 Kovan coin that I sent you, which is used for "gas".
 * At the bottom, click <b>[Add Token]</b>, andclick the <b>Custom Token</b> tab.
 * Copy-and-paste the following address in the <b>Token Contract Address</b> field: <b>0xbd44C4C9FaE76bB412D6181EEf14006447CFf14F</b>
 * <b>WAGER</b> should appear under <b>Token Symbol</b>. Click <b>[Next]</b>, and then click <b>[Add Tokens]</b>.
