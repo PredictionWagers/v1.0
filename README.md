@@ -54,6 +54,6 @@ To use the app, you must use the Chrome or Firefox browser, and be logged into M
 For example, if the Proposer deposited $1.25 to offer a 125% profit on a $1 wager, and the Acceptor wagered $.5 and won, then the Acceptor would receive $1.15 ($.50 + $.625), and the Proposer would receive $.625 (the balance of their $1.25 deposit).
 10. The smallest allowable wager is $.01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. 
 For example, if you enter a wager for $.03 that pays 50% profit, then you will receive $.01 profit (instead of $.015).
-11. The app creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of $1I shall require a gross deposit of $.015.
+11. The app creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of $1.00 shall require a gross deposit of $1.015.
 
 The <b>Prediction Wagers</b> app was created by an anonymous author, and is publicly accessible. It can be run from any server, so this Github user is not responsible or liable for its usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
