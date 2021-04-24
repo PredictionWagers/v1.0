@@ -8,7 +8,7 @@ I will give each of you $50 in <b>WAGER</b> Tokens. To win $50, your balance muc
 
 Unlike other websites, this app does not interact with any server (other than reading the files from github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
 
-To use the app, I will walk you through the following instructions:
+To use this app, I will walk you through the following instructions:
 * Install the Metamask extension into the Chrome browser.
 * Text me your public Ethereum address.
 * Select the Kovan Test Network from the dropdown. You will have 1 Kovan coin that I sent you, which is used for "gas".
