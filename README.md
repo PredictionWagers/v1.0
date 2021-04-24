@@ -49,7 +49,7 @@ To use the app, you must use the Chrome or Firefox browser, and be logged into M
 5. The Acceptor must unlock and deposit <b>WAGER</b> tokens, to accept at least the Minimum Proposed Wager.
 6. The app creator will post the result for each Question after the event has been completed.
 7. The result ("YOU WON, or "YOU LOST") will then be shown under "Unresolved Wagers".
-8. The winner may Resolve the wager at any time after the app creator has posted the result of the Question.
+8. The winner or loser may Resolve the wager at any time after the app creator has posted the result of the Question.
 9. When a Wager is Resolved, the contract shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. 
 For example, if the Proposer deposited $.25 to offer a 125% profit on a $1 wager, and the Acceptor wagered $.5 and won, then the Acceptor would receive $1.15 ($.50 + $.625), and the Proposer would receive $.625 (the balance of their $1.25 deposit).
 10. The smallest allowable wager is $.01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. 
