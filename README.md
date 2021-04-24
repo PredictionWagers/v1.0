@@ -24,7 +24,7 @@ When you click <b>[Submit]</b>, a Metamask popup will ask you to <b>Confirm</b>.
 
 After the event has been completed and the outcome has beenposted, your bet (under <b>Your Unresolved Wagers</b>) will indicate whether you have won or lost. Either the winner or loser may click the <b>[Resolve Wager]</b> button, which will cause the winner's proceeds to be sent to their Kovan address.
 
-<hr style='width:5'>
+***
 
 Unlike other websites, this app does not interact with any server (other than reading the files from github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
 
