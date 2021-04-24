@@ -43,7 +43,7 @@ The Proposer can post a wager by selecting the following parameters, pertaining 
 > I will bet a maximum of $10 (minimum $2), that the Lakers will beat the Celtics tomorrow. I am offering a 125% profit (+125), so if you bet $2 and you win, you will receive $4.50, for a profit of $2.50.
 
 To use the app, you must use the Chrome or Firefox browser, and be logged into MetaMask with a <b>Kovan</b> address selected that contains <b>WAGER</b> tokens.
-1. The first time a Kovan address is used, click the <b>[Unlock WAGER Tokens]</b> button, so the app can access tokens from the address that is selected in MetaMask.
+1. The first time a Kovan address is used, click <b>Connect</b> on the Metamask popup, and (at the top of the app) click the <b>[Unlock WAGER Tokens]</b> button, so the app can access tokens from the address that is selected in MetaMask.
 2. The Proposer shall deposit tokens to cover their side of the wager. For example, if the Proposer offers a 125% profit on a $10 wager, then they must deposit $12.50.
 3. The Proposer may withdraw their deposit at any time before it is accepted.
 4. If a Proposer wants to bet against their own Wager Proposal, the Proposer must use a different Kovan address.
@@ -52,7 +52,7 @@ To use the app, you must use the Chrome or Firefox browser, and be logged into M
 7. The result ("YOU WON, or "YOU LOST") will then be shown under "Unresolved Wagers".
 8. The winner or loser may Resolve the wager at any time after the app creator has posted the result of the Question.
 9. When a Wager is Resolved, the app shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. 
-For example, if the Proposer deposited $1.25 to offer a 125% profit on a $1 wager, and the Acceptor wagered $.5 and won, then the Acceptor would receive $1.15 ($.50 + $.625), and the Proposer would receive $.625 (the balance of their $1.25 deposit).
+For example, if the Proposer deposited $1.25 to offer a 125% profit on a $1 wager, and the Acceptor wagered $.50 and won, then the Acceptor would receive $1.15 ($.50 + $.625), and the Proposer would receive $.625 (the balance of their $1.25 deposit).
 10. The smallest allowable wager is $.01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. 
 For example, if you enter a wager for $.03 that pays 50% profit, then you will receive $.01 profit (instead of $.015).
 11. The app creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of $1.00 shall require a gross deposit of $1.015.
