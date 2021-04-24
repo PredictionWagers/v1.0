@@ -43,7 +43,7 @@ The Proposer can post a wager by selecting the following parameters, pertaining 
 
 To use the app, you must use the Chrome or Firefox browser, and be logged into MetaMask with a <b>Kovan</b> address selected that contains <b>WAGER</b> tokens.
 1. The first time a Kovan address is used, click the <b>[Unlock WAGER Tokens]</b> button, so the app can access tokens from the account that is selected in MetaMask.
-2. The Proposer shall deposit tokens to cover their side of the wager. For example, if the Proposer offers a 125% profit on a $10r, then they must deposit $12.50.
+2. The Proposer shall deposit tokens to cover their side of the wager. For example, if the Proposer offers a 125% profit on a $10 wager, then they must deposit $12.50.
 3. The Proposer may withdraw their deposit at any time before it is accepted.
 4. If a Proposer wants to bet against their own Wager Proposal, the Proposer must use a different Kovan account.
 5. The Acceptor must unlock and deposit <b>WAGER</b> tokens, to accept at least the Minimum Proposed Wager.
