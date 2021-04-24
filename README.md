@@ -19,7 +19,7 @@ You will see that you now have 50 <b>WAGER</b> tokens to use with this app. Open
 You are now ready to use the app, so open this link in a new tab (and bookmark this URL):
 [<b>The Prediction Wagers User Interface</b>](https://predictionwagers.github.io/v1.0/PredictionWagers.htm) 
 
-You must first <b>Unlock</b> your <B>WAGER</B> Tokens. You only have to do this once.
+Metamask will prompt you to <b>Connect</b> to the Github webpage. After clicking <b>Connect</b> on the Metamask popup, you must then click the <b>Unlock</b> button at the top of the app, to unlock your <B>WAGER</B> Tokens. You only have to do these processes once.
 
 Under <b>Open Wager Proposals</b>, enter <b>Your Wager</b> for the bet that you would like to make. For this contest, each individual bet may not exceed $10.
 
