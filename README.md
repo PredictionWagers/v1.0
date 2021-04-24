@@ -2,7 +2,7 @@
 
 The <b>Prediction Wagers</b> app was created to allow my friends the chance to win $50, while learning more about cryptocurrencies and the blockchain.
 
-Each friend will receive $50 in <b>WAGER</b> Tokens. To win $50, your balance much reach at least $100. You will then be paid (via paypal) your balance, minus the $50 that you started with. Here are the rules:
+Each friend will receive $50 in <b>WAGER</b> Tokens. To win $50, your balance much reach at least $100. You will then be paid (via PayPal) your balance, minus the $50 that you started with. Here are the rules:
 * Each individual bet may not exceed $10.
 * You may not send or receive your Tokens to a different address.
 
@@ -18,7 +18,7 @@ You will see that you now have 50 <b>WAGER</b> tokens to use with this app. Open
 
 You are now ready to use the app, so open this link in a new tab (and bookmark this URL): [<b>The Prediction Wagers User Interface</b>](https://predictionwagers.github.io/v1.0/PredictionWagers.htm) 
 
-You must first <bUnlock</b> your <B>WAGER</B> Tokens. You only have to do this once.
+You must first <b>Unlock</b> your <B>WAGER</B> Tokens. You only have to do this once.
 
 Under <b>Open Wager Proposals</b>, enter <b>Your Wager</b> for the bet that you would like to make. For this contest, each individual bet may not exceed $10.
 
@@ -30,7 +30,7 @@ After a wager has <b>Resolved</b>, it will appear under <b><Your Resolved Wagers
   
 Feel free to experiment creating your own <b>Wager Proposals</b>, using the instructions shown below. You may <b>Cancel</b> a <b>Wager Proposal</b> that you create before anyone accepts it.
 ***
-Unlike other websites, this app does not interact with any server (other than reading the files from github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
+Unlike other websites, this app does not interact with any server (other than reading the files from Github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
 
 The Proposer can post a wager by selecting the following parameters, pertaining to a particular Question:
 * <b>Your Prediction:</b> Yes or No.
@@ -49,7 +49,7 @@ To use the app, you must use the Chrome or Firefox browser, and be logged into M
 5. The Acceptor must unlock and deposit <b>WAGER</b> tokens, to accept at least the Minimum Proposed Wager.
 6. The app creator will post the result for each Question after the event has been completed.
 7. The result ("YOU WON, or "YOU LOST") will then be shown under "Unresolved Wagers".
-8. The winner may Resolve the wager at any time after the appp creator has posted the result of the Question.
+8. The winner may Resolve the wager at any time after the app creator has posted the result of the Question.
 9. When a Wager is Resolved, the contract shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. 
 For example, if the Proposer deposited $.25 to offer a 125% profit on a $1 wager, and the Acceptor wagered $.5 and won, then the Acceptor would receive $1.15 ($.50 + $.625), and the Proposer would receive $.625 (the balance of their $1.25 deposit).
 10. The smallest allowable wager is $.01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. 
