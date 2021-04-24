@@ -11,7 +11,7 @@ To use this app, perform the following instructions:
 * Text me your public Ethereum address.
 * Select the Kovan Test Network from the dropdown. You will have 1 Kovan coin that was sent to you, which is used for "gas".
 * At the bottom, click <b>[Add Token]</b>, and click the <b>Custom Token</b> tab.
-* Copy-and-paste the following address to the <b>Token Contract Address</b> field: <b>0xbd44C4C9FaE76bB412D6181EEf14006447CFf14F</b>
+* Copy-and-paste the following address into the <b>Token Contract Address</b> field: <b>0xbd44C4C9FaE76bB412D6181EEf14006447CFf14F</b>
 * <b>WAGER</b> should appear under <b>Token Symbol</b>. Click <b>[Next]</b>, and then click <b>[Add Tokens]</b>.
 
 You will see that you now have 50 <b>WAGER</b> tokens to use with this app. Open the following link in a new tab, to see someone that owns $99 billion in <b>WAGER</b> tokens: [<b>View all WAGER Token Holders</b>](https://kovan.etherscan.io/token/0xbd44c4c9fae76bb412d6181eef14006447cff14f#balances) 
