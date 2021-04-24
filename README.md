@@ -56,4 +56,4 @@ For example, if the Proposer deposited $.25 to offer a 125% profit on a $1 wager
 For example, if you enter a wager for $.03 that pays 50% profit, then you will receive $.01 profit (instead of $.015).
 11. The app creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of $1I shall require a gross deposit of $.015.
 
-The <b>Prediction Wagers</b> dApp and user interface were created by an anonymous author, and are publicly accessible. They can be run from any server, so this Github user is not responsible or liable for their usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
+The <b>Prediction Wagers</b> app was created by an anonymous author, and is publicly accessible. It can be run from any server, so this Github user is not responsible or liable for its usage. Please see the [Terms of Use](https://predictionwagers.github.io/v1.0/TermsOfUse.htm) for more information.
