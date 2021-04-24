@@ -4,7 +4,7 @@ The <b>Prediction Wagers</b> app was created to allow my friends the chance to w
 
 I will give each of you $50 in <b>WAGER</b> Tokens. To win $50, your balance much reach at least $100. I will then pay you (via paypal) your balance, minus the $50 that you started with. Here are the rules:
 * Each individual bet may not exceed $10.
-* You may not send or receive your Tokens to a different account.
+* You may not send or receive your Tokens to a different address.
 
 Unlike other websites, this app does not interact with any server (other than reading the files from github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
 
