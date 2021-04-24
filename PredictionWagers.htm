@@ -1,0 +1,108 @@
+<html><head><title>Prediction Wagers v1.0</title>
+<style>
+BODY {color:black;font-family:verdana;font-size:12px}
+TD {color:black;font-family:verdana;font-size:12px}
+A.bluelink {color:blue}
+A.bluelink:hover {color:red}
+A.yellowlink {color:yellow}
+A.yellowlink:hover {color:lime}
+input[type=button] {cursor:pointer}
+
+    .clsModal_login_main {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .clsModal_login_sub {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 1px;
+        border: 5px solid #000000;
+        width: 700px;
+    }
+
+</style>
+<script src="web3.min_1.36.js"></script>
+<script src="abi_PredictionWagers.js"></script>
+<script src="prw.js"></script>
+<script src='abi_WAGER_MakeCoin.js'></script>
+</head>
+<body bgcolor=navy onLoad=DoLoad()><table bgcolor=white cellspacing=0 cellpadding=0 width=1366 align=center border=1 style='height:715px'><tr><td valign=top>
+	<table width=100%><tr>
+		<td width=42%>
+			<span id=idSpanMetaMaskStatus></span>
+		</td>
+		<td width=16% align=center><font color=maroon style='font-size:15px'><b>Prediction Wagers v1.0</b></font></td>
+		<td align=center width=7%><a href=? class=bluelink><b>Refresh page</b></a></td>
+		<td align=center width=25%><b><font color=red>Times are CT</font></b>&nbsp;&nbsp; Current: <span id=idSpanCurrentTime></span></td>
+		<td align=right width=10%>
+			<a target=_ext href=TermsOfUse.htm class=bluelink><b>Terms of Use</b></a>&nbsp;&nbsp;
+			<a target=_ext href=/v1.0 class=bluelink><b>Help</b></a>
+		</td>
+	</tr></table>
+<table align=center cellspacing=0 cellpadding=0 width=99.5%><tr><td><span id=idSpanLastTransactionHash></span></td></tr></table>
+
+<div id=idDivAllDivs style='display:none'>
+
+<div id=idDivCreateWagerProposal>
+<table width=99.5% bgcolor=#ffffe8 border=1 cellspacing=0 cellpadding=5 align=center><tr><td>
+<center><b><font color=maroon><span id=idSpanCreateWagerProposalCaption>Create a Wager Proposal</span></font></b></center><font style='font-size:4px'><br></font>
+<span id=idSpanQuestions></span>
+</td></tr></table>
+<br>
+</div>
+
+<div id=idDivOpenProposals style="overflow:auto; height:150px;"></div><br>
+
+<div id=idDivUnresolvedWagers style="overflow:auto; height:150px;"></div><br>
+
+<div id=idDivResolvedWagers style="overflow:auto; height:150px;"></div>
+
+<!-- Close idDivAllDivs -->
+</div>
+
+<div id=idBottomFooter style='position: absolute; top: 675px; width: 1366px'>
+<table cellspacing=0 cellpadding=0 width=99% align=center><tr>
+<td align=center>
+This dApp and user interface were created by an anonymous author, and are publicly accessible. They can be run from any server, so this website is not responsible or liable for their usage. 
+See <a target=_ext class=bluelink href='TermsOfUse.htm'>Terms of Use</a>.
+</td>
+<td align=right>
+</td>
+</tr></table>
+
+<font style='font-size:4px'><br></font>
+<table width=99% align=center><tr>
+<td align=left>
+<span id=idSpan_TransactionFee></span>
+</td>
+<td align=right>
+This version (1.0) displays wagers from <b>4/24/2021-5/30/2021</b>. <a target=_ext class=bluelink href=/v1.0>Click here to see other versions.</a>
+</td>
+</tr></table>
+
+<!-- divOverlay_Working START -->
+<div id=divOverlay_Working class=clsModal_login_main style='padding-top:240px'>
+<div id=divOverlaySub_Working class=clsModal_login_sub style='width:1280px'>
+<table width=95% align=center cellpadding=0 cellspacing=0 align=center><tr><td>
+<span id=idSpanWorking></span>
+</td></tr></table>
+</div>
+</div>
+<!-- divOverlay_Working END -->
+
+
+
+
+</div>
+</td></tr></table>
+</body></html>
