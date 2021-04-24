@@ -16,7 +16,7 @@ To use this app, perform the following instructions:
 
 You will see that you now have 50 <b>WAGER</b> tokens to use with this app. Open the following link in a new tab, to see someone that owns $99 billion in <b>WAGER</b> tokens: [<b>View all WAGER Token Holders</b>](https://kovan.etherscan.io/token/0xbd44c4c9fae76bb412d6181eef14006447cff14f#balances) 
 
-You are now ready to use the app, so please bookmark this URL: [<b>The Prediction Wagers User Interface</b>](https://predictionwagers.github.io/v1.0/PredictionWagers.htm) 
+You are now ready to use the app, so open this link in a new tab (and bookmark this URL): [<b>The Prediction Wagers User Interface</b>](https://predictionwagers.github.io/v1.0/PredictionWagers.htm) 
 
 Under <b>Open Wager Proposals</b>, enter <b>Your Wager</b> for the bet that you would like to make. For this contest, each individual bet may not exceed $10.
 
