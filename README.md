@@ -51,7 +51,7 @@ To use the app, you must use the Chrome or Firefox browser, and be logged into M
 7. The result ("YOU WON, or "YOU LOST") will then be shown under "Unresolved Wagers".
 8. The winner or loser may Resolve the wager at any time after the app creator has posted the result of the Question.
 9. When a Wager is Resolved, the app shall transfer the correct amount to each party, and the Proposer shall receive the balance of their deposit. 
-For example, if the Proposer deposited $.25 to offer a 125% profit on a $1 wager, and the Acceptor wagered $.5 and won, then the Acceptor would receive $1.15 ($.50 + $.625), and the Proposer would receive $.625 (the balance of their $1.25 deposit).
+For example, if the Proposer deposited $1.25 to offer a 125% profit on a $1 wager, and the Acceptor wagered $.5 and won, then the Acceptor would receive $1.15 ($.50 + $.625), and the Proposer would receive $.625 (the balance of their $1.25 deposit).
 10. The smallest allowable wager is $.01, and all wagers and calculations are rounded down to two digits to the right of the decimal point. 
 For example, if you enter a wager for $.03 that pays 50% profit, then you will receive $.01 profit (instead of $.015).
 11. The app creator shall receive a 1.5% transaction fee from each deposit. For example, a net deposit of $1I shall require a gross deposit of $.015.
