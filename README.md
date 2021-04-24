@@ -1,22 +1,33 @@
 # Prediction Wagers
 
-The <b>Prediction Wagers</b> app was created to allow my friends the chance to win $50, while learning more about cryptocurrencies and the blockchain.
+The <b>Prediction Wagers</b> app was created to allow friends the chance to win $50, while learning more about cryptocurrencies and the blockchain.
 
-I will give each of you $50 in <b>WAGER</b> Tokens. To win $50, your balance much reach at least $100. I will then pay you (via paypal) your balance, minus the $50 that you started with. Here are the rules:
+Each friend will receive $50 in <b>WAGER</b> Tokens. To win $50, your balance much reach at least $100. You will then be paid (via paypal) your balance, minus the $50 that you started with. Here are the rules:
 * Each individual bet may not exceed $10.
 * You may not send or receive your Tokens to a different address.
 
-Unlike other websites, this app does not interact with any server (other than reading the files from github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
-
-To use this app, I will walk you through the following instructions:
+To use this app, perform the following instructions:
 * Install the Metamask extension into the Chrome browser.
-* Text me your public Ethereum address.
-* Select the Kovan Test Network from the dropdown. You will have 1 Kovan coin that I sent you, which is used for "gas".
+* Text the admin your public Ethereum address.
+* Select the Kovan Test Network from the dropdown. You will have 1 Kovan coin that was sent to you, which is used for "gas".
 * At the bottom, click <b>[Add Token]</b>, and click the <b>Custom Token</b> tab.
 * Copy-and-paste the following address in the <b>Token Contract Address</b> field: <b>0xbd44C4C9FaE76bB412D6181EEf14006447CFf14F</b>
 * <b>WAGER</b> should appear under <b>Token Symbol</b>. Click <b>[Next]</b>, and then click <b>[Add Tokens]</b>.
 
-You will see that you now have 50 <b>WAGER</b> tokens to use with this app. Open this link in a new tab to see that I own $99 billion in <b>WAGER</b> tokens: https://kovan.etherscan.io/token/0xbd44c4c9fae76bb412d6181eef14006447cff14f#balances
+You will see that you now have 50 <b>WAGER</b> tokens to use with this app. Open this link in a new tab, to see that someone owns $99 billion in <b>WAGER</b> tokens: https://kovan.etherscan.io/token/0xbd44c4c9fae76bb412d6181eef14006447cff14f#balances
+
+You are now ready to use the app, sop please bookmark this URL: https://www.tokenup.app/PredictionWagers.htm
+
+Under <b>Open Wager Proposals</b>, enter <b>Your Wager</b> for the bet that you would like to make. For this contest, each individual bet may not exceed $10.
+
+When you click <b>[Submit]</b>, a Metamask popup will ask you to <b>Confirm</b>. About 15 seconds later, your bet will be shown under <b>Your Unresolved Wagers</b>.
+
+After the event has been completed and the outcome has beenposted, your bet (under <b>Your Unresolved Wagers</b>) will indicate whether you have won or lost. Either the winner or loser may click the <b>[Resolve Wager]</b> button, which will cause the winner's proceeds to be sent to their Kovan address.
+
+<hr>
+
+Unlike other websites, this app does not interact with any server (other than reading the files from github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
+
 
 and User Interface let you propose or accept a DAI wager with user-defined odds, pertaining to Questions that are posted by the dApp creator.  
 [<b>View the User Interface</b>](https://predictionwagers.github.io/v1.0/Predictor.htm)  
