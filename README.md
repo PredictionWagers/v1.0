@@ -26,8 +26,7 @@ After the event has been completed and the outcome has beenposted, your bet (und
 
 Afetr a wager has been <b>Resolved</b>, it will appear under <b><Your Resolved Wagers></b>.
   
-Feel free to experiment creating your
-
+Feel free to experiment creating your own <b>Wager Proposals</b>, using the instructions shown below. You may <b>Cancel</b> a <b>Wager Proposals</b> that you create before anyone accepts it.
 ***
 
 Unlike other websites, this app does not interact with any server (other than reading the files from github). All the data is stored and read from the blockchain, which is a network of thousands of anonymous computers.
